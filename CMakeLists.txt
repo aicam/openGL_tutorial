@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.3)
 project(openGL_tutorial)
+if (CMAKE_SYSTEM MATCHES "Linux")
+    add_definitions(-D__Linux__)
+endif()
 find_package(OpenGL REQUIRED)
 if(NOT OPENGL_FOUND)
     message("ERROR: OpenGL not found")
