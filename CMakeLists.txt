@@ -8,7 +8,8 @@ if(NOT OPENGL_FOUND)
     message("ERROR: OpenGL not found")
 endif(NOT OPENGL_FOUND)
 set(GL_LIBRARY GL GLU X11)
-
+set(MESA_GL_VERSION_OVERRIDE "310")
+set(MESA_GLSL_VERSION_OVERRIDE "310")
 add_executable(openGL_tutorial main.cpp)
 target_link_libraries(openGL_tutorial glfw GLEW libGLEW.so libGLU.so libGL.so)
 
